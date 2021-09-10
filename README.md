@@ -14,8 +14,8 @@ Step1 ChIA-PET2 generate result.rmdup.bedpe
 | chr6 |108511370|108511520| chr6 |114767868|114767929|SRR7868823.2 | .     | +       | -       |       
 | chr6 |102492337|102492414| chr6 |102499445|102499560|SRR7868823.90| .     | -       | +       |
 
--
--
+*
+*
 
 Step2 bedpe2Matrix generate matrix
 ---
