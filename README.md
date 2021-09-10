@@ -13,8 +13,10 @@ Step1 ChIA-PET2 generate result.rmdup.bedpe
 |:-----|:--------|:--------|:-----|:--------|:--------|:------------|:------|:--------|:--------|
 | chr6 |108511370|108511520| chr6 |114767868|114767929|SRR7868823.2 | .     | +       | -       |       
 | chr6 |102492337|102492414| chr6 |102499445|102499560|SRR7868823.90| .     | -       | +       |
-\
-\
+
+-
+-
+
 Step2 bedpe2Matrix generate matrix
 ---
         bedpe2Matrix --binsize 100000 --chrsizes /public2/ZJRen/m6AvsHiC/tools/hg19/hg19_size.bed --ifile Control_BL-HiC_rep1_ChIAPET2/Control_BL-HiC_rep1_ChIAPET2_result.rmdup.bedpe --oprefix Control_BL-HiC_rep1_100k_matrix --progress
