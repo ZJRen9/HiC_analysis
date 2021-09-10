@@ -14,14 +14,21 @@ Step1 ChIA-PET2 generate result.rmdup.bedpe
 | chr6 |108511370|108511520| chr6 |114767868|114767929|SRR7868823.2 | .     | +       | -       |       
 | chr6 |102492337|102492414| chr6 |102499445|102499560|SRR7868823.90| .     | -       | +       |
 
-*
-*
+
 
 Step2 bedpe2Matrix generate matrix
 ---
         bedpe2Matrix --binsize 100000 --chrsizes /public2/ZJRen/m6AvsHiC/tools/hg19/hg19_size.bed --ifile Control_BL-HiC_rep1_ChIAPET2/Control_BL-HiC_rep1_ChIAPET2_result.rmdup.bedpe --oprefix Control_BL-HiC_rep1_100k_matrix --progress
         
         bedpe2Matrix --binsize 40000 --chrsizes /public2/ZJRen/m6AvsHiC/tools/hg19/hg19_size.bed --ifile Control_BL-HiC_rep1_ChIAPET2/Control_BL-HiC_rep1_ChIAPET2_result.rmdup.bedpe --oprefix Control_BL-HiC_rep1_40k_matrix --progress
+        
+
+Step3 ice Using to smooth matrix
+---
+        ice --results_filename Control_BL-HiC_rep1_100k_matrix_iced.matrix --filter_low_counts_perc 0.02 --filter_high_counts_perc 0 --max_iter 100 --eps 0.1 --remove-all-zeros-loci --output-bias 1 --verbose 1 Control_BL-HiC_rep1_100k_matrix.matrix
+        
+        ice --results_filename Control_BL-HiC_rep1_40k_matrix_iced.matrix --filter_low_counts_perc 0.02 --filter_high_counts_perc 0 --max_iter 100 --eps 0.1 --remove-all-zeros-loci --output-bias 1 --verbose 1 Control_BL-HiC_rep1_40k_matrix.matrix
+
   
   
 
